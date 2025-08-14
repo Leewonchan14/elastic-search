@@ -1,4 +1,4 @@
-# 🔍 Elasticsearch 주니어 개발자 학습 커리큘럼
+# 🔍 Elasticsearch
 
 ## 📋 목차
 
