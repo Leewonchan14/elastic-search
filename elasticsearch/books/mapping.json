@@ -1,0 +1,31 @@
+{
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text",
+        "analyzer": "standard"
+      },
+      "author": {
+        "type": "keyword"
+      },
+      "genre": {
+        "type": "keyword"
+      },
+      "publication_date": {
+        "type": "date"
+      },
+      "pages": {
+        "type": "integer"
+      },
+      "price": {
+        "type": "float"
+      },
+      "description": {
+        "type": "text"
+      },
+      "rating": {
+        "type": "float"
+      }
+    }
+  }
+}

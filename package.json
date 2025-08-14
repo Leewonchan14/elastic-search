@@ -1,0 +1,22 @@
+{
+  "name": "elastic-serach",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "tslint": "^6.1.3",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
+  },
+  "files": [
+    "./bin/*",
+    "./lib/*"
+  ],
+  "typings": "./lib/index.d.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "prepublish": "npm run build"
+  }
+}
