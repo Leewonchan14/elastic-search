@@ -1,6 +1,7 @@
 # 🔍 Elasticsearch 주니어 개발자 학습 커리큘럼
 
 ## 📋 목차
+
 - [학습 목표](#-학습-목표)
 - [사전 준비사항](#-사전-준비사항)
 - [1단계: 환경 구축](#1단계-환경-구축)
@@ -16,6 +17,7 @@
 ## 🎯 학습 목표
 
 이 커리큘럼을 완료하면 다음을 할 수 있습니다:
+
 - Elasticsearch의 핵심 개념과 아키텍처 이해
 - Docker를 사용한 Elasticsearch 환경 구축
 - 효율적인 검색 쿼리 작성
@@ -26,12 +28,14 @@
 ## 🛠 사전 준비사항
 
 ### 필수 도구
+
 - Docker Desktop 설치
 - 터미널/명령줄 도구 사용 경험
 - 기본적인 JSON 이해
 - HTTP/REST API 개념
 
 ### 권장 지식
+
 - 기본적인 데이터베이스 개념
 - 웹 개발 경험 (선택사항)
 
@@ -74,6 +78,7 @@ docker run -d --name kibana \
 ```
 
 ### 📝 실습 1-1: 환경 확인
+
 - [ ] Elasticsearch가 정상적으로 실행되는지 확인
 - [ ] 클러스터 정보 조회
 - [ ] Kibana Dev Tools 접속 (선택사항)
@@ -85,6 +90,7 @@ docker run -d --name kibana \
 ### 🧭 핵심 개념 이해
 
 #### 2.1 주요 용어
+
 - **Index**: 관계형 DB의 데이터베이스와 유사
 - **Document**: 관계형 DB의 행(row)과 유사한 JSON 객체
 - **Field**: Document 내의 속성
@@ -93,6 +99,7 @@ docker run -d --name kibana \
 - **Replica**: Shard의 복사본
 
 #### 2.2 RESTful API 구조
+
 ```
 POST /index_name/_doc          # 문서 생성
 GET /index_name/_doc/doc_id    # 문서 조회
@@ -101,6 +108,7 @@ DELETE /index_name/_doc/doc_id # 문서 삭제
 ```
 
 ### 📝 실습 2-1: 기본 개념 확인
+
 ```bash
 # 모든 인덱스 목록 확인
 curl "http://localhost:9200/_cat/indices?v"
@@ -218,6 +226,7 @@ curl -X DELETE "http://localhost:9200/books/_doc/2"
 ```
 
 ### 📝 실습 3-1: CRUD 연습
+
 - [ ] 자신만의 도서 데이터 5개 이상 추가
 - [ ] 특정 도서 정보 수정
 - [ ] 도서 검색 및 조회
@@ -353,6 +362,7 @@ curl -X GET "http://localhost:9200/books/_search" -H 'Content-Type: application/
 ```
 
 ### 📝 실습 4-1: 검색 마스터하기
+
 - [ ] 제목으로 도서 검색
 - [ ] 가격 범위로 필터링
 - [ ] 복합 조건 검색 (장르 + 평점)
@@ -467,6 +477,7 @@ curl -X GET "http://localhost:9200/books/_search" -H 'Content-Type: application/
 ```
 
 ### 📝 실습 5-1: 데이터 분석하기
+
 - [ ] 전체 도서의 평균 가격 계산
 - [ ] 장르별 도서 수 확인
 - [ ] 평점이 높은 상위 3개 장르 찾기
@@ -571,6 +582,7 @@ curl -X GET "http://localhost:9200/books/_search" -H 'Content-Type: application/
 ```
 
 ### 📝 실습 6-1: 검색 애플리케이션 구현
+
 - [ ] 복합 검색 기능 구현
 - [ ] 정렬 옵션 추가 (가격, 평점, 최신순)
 - [ ] 페이지네이션 구현
@@ -652,111 +664,3 @@ curl -X GET "http://localhost:9200/books/_search" -H 'Content-Type: application/
 }
 '
 ```
-
-### 📝 실습 7-1: 성능 최적화
-- [ ] 인덱스 설정 최적화
-- [ ] 쿼리 프로파일링으로 병목 지점 찾기
-- [ ] 캐시 효율성 확인
-
----
-
-## 🎨 프로젝트 아이디어
-
-### 초급 프로젝트
-1. **개인 도서관 관리 시스템**
-   - 책 등록, 검색, 분류
-   - 읽은 책 평점 관리
-
-2. **블로그 검색 엔진**
-   - 블로그 포스트 색인
-   - 태그별 검색
-
-### 중급 프로젝트
-3. **이커머스 상품 검색**
-   - 상품 검색 및 필터링
-   - 추천 시스템
-
-4. **로그 분석 시스템**
-   - 웹 서버 로그 분석
-   - 실시간 모니터링 대시보드
-
-### 고급 프로젝트
-5. **검색 기반 추천 시스템**
-   - 사용자 검색 패턴 분석
-   - 개인화된 추천
-
-6. **다국어 검색 엔진**
-   - 여러 언어 지원
-   - 형태소 분석기 활용
-
----
-
-## 📚 추가 학습 자료
-
-### 공식 문서
-- [Elasticsearch 공식 문서](https://www.elastic.co/guide/en/elasticsearch/reference/current/)
-- [Kibana 사용 가이드](https://www.elastic.co/guide/en/kibana/current/)
-
-### 심화 학습 주제
-- **ELK Stack**: Elasticsearch + Logstash + Kibana
-- **Beats**: 데이터 수집 도구들
-- **Machine Learning**: Elasticsearch의 ML 기능
-- **Security**: X-Pack 보안 기능
-- **클러스터 관리**: 운영 환경 구축
-
-### 실무 활용 사례
-- 검색 엔진 구축
-- 로그 분석 및 모니터링
-- 비즈니스 인텔리전스
-- 실시간 데이터 분석
-- APM(Application Performance Monitoring)
-
----
-
-## 🏆 학습 완료 체크리스트
-
-### 기초 (1-3단계)
-- [ ] Docker로 Elasticsearch 환경 구축
-- [ ] 기본 CRUD 연산 수행
-- [ ] 인덱스와 매핑 이해
-
-### 중급 (4-5단계)
-- [ ] 다양한 검색 쿼리 작성
-- [ ] 집계 기능으로 데이터 분석
-- [ ] Bool 쿼리 활용
-
-### 고급 (6-7단계)
-- [ ] 검색 애플리케이션 구축
-- [ ] 성능 최적화 적용
-- [ ] 모니터링과 문제 해결
-
----
-
-## 💡 팁과 주의사항
-
-### 개발 팁
-- **작은 데이터셋부터 시작**: 복잡한 쿼리를 작은 데이터로 먼저 테스트
-- **Dev Tools 활용**: Kibana의 Dev Tools를 사용하면 더 편리함
-- **버전 호환성 확인**: Elasticsearch 버전별 기능 차이 주의
-
-### 운영 시 주의사항
-- **메모리 관리**: JVM 힙 메모리 설정 중요
-- **디스크 공간**: 로그와 데이터 증가량 모니터링
-- **보안 설정**: 운영 환경에서는 반드시 보안 기능 활성화
-
----
-
-## 🤝 커뮤니티와 도움받기
-
-- **Elastic 공식 포럼**: https://discuss.elastic.co/
-- **한국 Elasticsearch 사용자 그룹**: 국내 커뮤니티 참여
-- **Stack Overflow**: elasticsearch 태그로 질문
-- **GitHub**: Elasticsearch 저장소에서 이슈 확인
-
----
-
-**축하합니다! 🎉**
-이 커리큘럼을 완료하시면 Elasticsearch의 핵심 기능을 모두 익히게 됩니다. 
-실무에서 바로 활용할 수 있는 검색 시스템을 구축할 수 있을 것입니다!
-
-*"검색은 단순히 데이터를 찾는 것이 아니라, 정보를 발견하는 것입니다." - Elasticsearch 철학*
